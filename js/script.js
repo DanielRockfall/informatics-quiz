@@ -29,4 +29,19 @@ const questions = [
 		answers: ["1996", "1995", "1994", "все ответы неверные"],
 		correct: 2,
 	},
-];
+]; // Массив с вопосами
+
+
+
+// Находим элементы
+
+const headerContainer = document.querySelector('#header');
+
+
+
+// Переменные игры
+
+let srore = 0; // кол-во правильных ответов
+let questionIndex = 0; // текущий вопрос
+
+
