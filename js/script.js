@@ -31,17 +31,22 @@ const questions = [
 	},
 ]; // Массив с вопосами
 
-
-
 // Находим элементы
 
 const headerContainer = document.querySelector('#header');
-
-
+const listContainer = document.querySelector('#list');
+const submitBtn = document.querySelector('#submit');
 
 // Переменные игры
 
 let srore = 0; // кол-во правильных ответов
 let questionIndex = 0; // текущий вопрос
 
+// Функция отчистки страницы
 
+clearPage()
+
+function clearPage() {
+	headerContainer.innerHTML = "";
+	listContainer.innerHTML = "";
+}
