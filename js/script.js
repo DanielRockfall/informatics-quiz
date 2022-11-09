@@ -1,3 +1,4 @@
+// Массив с вопросами
 const questions = [
 	{
 		question: "Какой язык работает в браузере?",
@@ -29,7 +30,7 @@ const questions = [
 		answers: ["1996", "1995", "1994", "все ответы неверные"],
 		correct: 2,
 	},
-]; // Массив с вопросами
+]; 
 
 // Находим элементы
 
@@ -46,39 +47,45 @@ let questionIndex = 0; // текущий вопрос
 
 clearPage();
 showQuestion();
+submitBtn.onclick = checkAnswer;
 
 
-function clearPage() {
+function clearPage(){
 	headerContainer.innerHTML = "";
 	listContainer.innerHTML = "";
 }
 
 
-function showQuestion() {
-	console.log('showQuestion');
+function showQuestion(){
 
 	// Рендер вопроса
 	const headerTemplate = `<h2 class="title">%title%</h2>`;
-	const title = headerTemplate.replace('%title%', questions[questionIndex]['question'])
+	const title = headerTemplate.replace('%title%', questions[questionIndex]['question']);
 	headerContainer.innerHTML = title;
 
 
 	// Рендер вариантов ответов
 	for (answerText of questions[questionIndex]['answers']) {
-		console.log(answerText);
-
-	const questionTemplate = 
+		const questionTemplate = 
 			`<li>
 				<label>
 					<input type="radio" class="answer" name="answer" />
 					<span>%answer%</span>
 				</label>
 			</li>`;
-
-	const answerHTML = questionTemplate.replace('%answer%', answerText)
-
-	listContainer.innerHTML += answerHTML;
-	}
-	
+		const answerHTML = questionTemplate.replace('%answer%', answerText)
+		listContainer.innerHTML += answerHTML;
+	}	
 }
 
+// Находим выбранную радио-кнопку
+function checkAnswer(){
+	const checkedRadio = listContainer.querySelector('input[type="radio"]:checked');
+
+
+// Если при нажатии на кнопку ответ не выбран - перезапускаем функцию
+	if (!checkAnswer) {
+		submitBtn.blur();
+		return
+	}
+}
