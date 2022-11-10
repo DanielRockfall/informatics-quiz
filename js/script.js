@@ -43,13 +43,13 @@ const submitBtn = document.querySelector('#submit');
 let score = 0; // кол-во правильных ответов
 let questionIndex = 0; // текущий вопрос
 
-// Функция отчистки страницы
+
 
 clearPage();
 showQuestion();
 submitBtn.onclick = checkAnswer;
 
-
+// Функция отчистки страницы
 function clearPage(){
 	headerContainer.innerHTML = "";
 	listContainer.innerHTML = "";
@@ -65,22 +65,32 @@ function showQuestion(){
 
 
 	// Рендер вариантов ответов
+	let answerNumber = 1;
+
 	for (answerText of questions[questionIndex]['answers']) {
+
 		const questionTemplate = 
 			`<li>
 				<label>
-					<input type="radio" class="answer" name="answer" />
+					<input value = "%number%" type="radio" class="answer" name="answer" />
 					<span>%answer%</span>
 				</label>
 			</li>`;
-		const answerHTML = questionTemplate.replace('%answer%', answerText)
+
+			const answerHTML = questionTemplate
+											.replace('%answer%', answerText)
+											.replace('%number%', answerNumber)
 		listContainer.innerHTML += answerHTML;
+		answerNumber++;
+
 	}	
 }
+
 
 // Находим выбранную радио-кнопку
 function checkAnswer(){
 	const checkedRadio = listContainer.querySelector('input[type="radio"]:checked');
+	console.log(checkedRadio);
 
 
 // Если при нажатии на кнопку ответ не выбран - перезапускаем функцию
@@ -88,4 +98,8 @@ function checkAnswer(){
 		submitBtn.blur();
 		return
 	}
+	
+	const userAnswer = parseInt(checkedRadio.value)
 }
+
+
