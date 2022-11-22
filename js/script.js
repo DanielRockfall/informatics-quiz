@@ -1,34 +1,33 @@
 // Массив с вопросами
 const questions = [
 	{
-		question: "Какой язык работает в браузере?",
-		answers: ["Java", "C", "Python", "JavaScript"],
+		question: "Что необходимо компьютеру для нормальной работы?",
+		answers: ["Различные прикладные программы", "Операционная система", "Дискета в дисководе"],
+		correct: 2,
+	},
+
+	{
+		question: "Программы, предназначенные для обслуживания конкретных периферийных устройств:",
+		answers: ["Утилиты", "Драйверы", "Библиотеки", "Оболочки"],
+		correct: 2,
+	},
+
+	{
+		question: "Папка, которая выступает в качестве вершины файловой структуры и олицетворяет собой носитель, на котором сохраняются файлы носит название:",
+		answers: ["Начальной", "Папки верхнего уровня", "Стартовой", "Корневой"],
 		correct: 4,
 	},
+
 	{
-		question: "Что означает CSS?",
-		answers: [
-			"Central Style Sheets",
-			"Cascading Style Sheets",
-			"Cascading Simple Sheets",
-			"Cars SUVs Sailboats",
-		],
-		correct: 2,
+		question: "Первая ЭВМ в нашей стране называлась:",
+		answers: ["Стрела", "БЭСМ", "МЭСМ", "IBM PC"],
+		correct: 3,
 	},
+
 	{
-		question: "Что означает HTML?",
-		answers: [
-			"Hypertext Markup Language",
-			"Hypertext Markdown Language",
-			"Hyperloop Machine Language",
-			"Helicopters Terminals Motorboats Lamborginis",
-		],
+		question: "Основные принципы цифровых вычислительных машин были разработаны:",
+		answers: ["Джоном фон Нейманом", "Блезом Паскалем", "Чарльзом Беббиджем"],
 		correct: 1,
-	},
-	{
-		question: "В каком году был создан JavaScript?",
-		answers: ["1996", "1995", "1994", "все ответы неверные"],
-		correct: 2,
 	},
 ]; 
 
